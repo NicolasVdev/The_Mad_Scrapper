@@ -19,4 +19,5 @@ crypto_pair.reject {|name, price| price.nil? }
 end
 
 
+print "crypto_pair = "
 puts cryptocurrencies

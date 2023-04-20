@@ -20,13 +20,16 @@ def perform
   emails = towns.map { |town| get_town_email(town) }
   names = Nokogiri::HTML(URI.open("https://www.annuaire-des-mairies.com/val-d-oise.html")).xpath('//a[@class="lientxt"]').map { |name| name.text }
 
-  town_emails = []
-  names.each_with_index do |name, i|
-    town_emails << { name => emails[i] }
-  end
+  town_emails = names.zip(emails)
 
-  return town_emails
+  town_emails.map {|name, email| {name => email}}
+
+  # town_emails = []
+  # names.each_with_index do |name, i|
+  #   town_emails << { name => emails[i] }
+
 end
 
 
+print "town_emails = "
 puts perform

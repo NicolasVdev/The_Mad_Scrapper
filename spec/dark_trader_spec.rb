@@ -8,7 +8,7 @@ describe "crypto" do
 
 
     it "return the name of crypto" do  
-     expect(cryptocurrencies).to include {"BTC"}
+     expect(cryptocurrencies).to include {"BTC"=>"28,178.20"}
      expect(cryptocurrencies).to include {"ETH"}
      expect(cryptocurrencies).to include {"USDT"}
     end 
