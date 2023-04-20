@@ -14,7 +14,7 @@ def cryptocurrencies
 crypto_pair = all_crypto_names.zip(all_crypto_prices)
 
 crypto_pair.reject {|name, price| price.nil? }
-           .map{|name, price| { "#{name}" => price}}
+           .map{|name, price| { name => price }}
 
 end
 
